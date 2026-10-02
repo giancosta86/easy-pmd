@@ -4,13 +4,13 @@
 
     <groupId>info.gianlucacosta.easypmd</groupId>
     <artifactId>easypmd</artifactId>
-    <version>10.0</version>
+    <version>11.0.0-SNAPSHOT</version>
     <packaging>nbm</packaging>
 
 
     <name>EasyPmd</name>
     <description>Seamlessly integrates PMD into your NetBeans IDE</description>
-    <url>https://github.com/giancosta86/EasyPmd</url>
+    <url>https://github.com/giancosta86/easy-pmd</url>
     <inceptionYear>2009</inceptionYear>
 
 
@@ -40,8 +40,6 @@
 
         <maven.compiler.source>1.8</maven.compiler.source>
         <maven.compiler.target>1.8</maven.compiler.target>
-
-        <facebookPage>https://www.facebook.com/easypmd</facebookPage>
 
         <libs.netbeans.version>RELEASE80</libs.netbeans.version>
         <libs.pmd.version>5.5.2</libs.pmd.version>
@@ -73,24 +71,24 @@
                 <enabled>false</enabled>
             </snapshots>
         </repository>
-        
-        
+
+
         <repository>
             <id>jcenter</id>
             <name>JCenter</name>
             <url>https://jcenter.bintray.com</url>
-            
+
             <snapshots>
                 <enabled>false</enabled>
-            </snapshots>            
+            </snapshots>
         </repository>
     </repositories>
-    
-    
+
+
     <scm>
-        <connection>scm:git:git://github.com/giancosta86/EasyPmd.git</connection>
-        <developerConnection>scm:git:git@github.com:giancosta86/EasyPmd.git</developerConnection>
-        <url>https://github.com/giancosta86/EasyPmd</url>
+        <connection>scm:git:git://github.com/giancosta86/easy-pmd.git</connection>
+        <developerConnection>scm:git:git@github.com:giancosta86/easy-pmd.git</developerConnection>
+        <url>https://github.com/giancosta86/easy-pmd</url>
     </scm>
 
 
@@ -100,24 +98,24 @@
             <artifactId>helios-core</artifactId>
             <version>1.7</version>
         </dependency>
-        
-     
+
+
         <dependency>
             <groupId>net.sourceforge.pmd</groupId>
             <artifactId>pmd-core</artifactId>
-            <version>${libs.pmd.version}</version>   
-            
+            <version>${libs.pmd.version}</version>
+
             <exclusions>
                 <exclusion>
                     <groupId>net.sourceforge.saxon</groupId>
                     <artifactId>saxon</artifactId>
                 </exclusion>
-                
+
                 <exclusion>
                     <groupId>xerces</groupId>
                     <artifactId>xercesImpl</artifactId>
                 </exclusion>
-            </exclusions>         
+            </exclusions>
         </dependency>
 
 
@@ -125,22 +123,22 @@
             <groupId>net.sourceforge.pmd</groupId>
             <artifactId>pmd-java</artifactId>
             <version>${libs.pmd.version}</version>
-            
+
             <exclusions>
                 <exclusion>
                     <groupId>net.sourceforge.saxon</groupId>
                     <artifactId>saxon</artifactId>
                 </exclusion>
-                
-                
+
+
                 <exclusion>
                     <groupId>xerces</groupId>
                     <artifactId>xercesImpl</artifactId>
                 </exclusion>
             </exclusions>
         </dependency>
-               
-    
+
+
         <dependency>
             <groupId>com.thoughtworks.xstream</groupId>
             <artifactId>xstream</artifactId>
@@ -207,7 +205,7 @@
             <artifactId>org-openide-util-lookup</artifactId>
             <version>${libs.netbeans.version}</version>
         </dependency>
-            
+
         <dependency>
             <groupId>org.netbeans.api</groupId>
             <artifactId>org-openide-filesystems</artifactId>
@@ -242,16 +240,16 @@
                         </goals>
                         <configuration>
                             <files>
-                                <file>${jks_signing_params_file}</file>                                
+                                <file>${jks_signing_params_file}</file>
                             </files>
-                            
-                            <quiet>true</quiet>                            
+
+                            <quiet>true</quiet>
                         </configuration>
                     </execution>
                 </executions>
             </plugin>
-                        
-                        
+
+
             <plugin>
                 <groupId>org.codehaus.mojo</groupId>
                 <artifactId>license-maven-plugin</artifactId>
@@ -267,7 +265,7 @@
                             <goal>update-file-header</goal>
                         </goals>
 
-                        <configuration>                            
+                        <configuration>
                             <organizationName>Gianluca Costa</organizationName>
                             <licenseName>gpl_v3</licenseName>
 
@@ -276,7 +274,7 @@
                             <canUpdateLicense>true</canUpdateLicense>
 
                             <addJavaLicenseAfterPackage>false</addJavaLicenseAfterPackage>
-                            
+
                             <licenseFile>${project.basedir}/LICENSE</licenseFile>
 
                             <processStartTag>
@@ -291,7 +289,7 @@
                         </configuration>
                     </execution>
                 </executions>
-            </plugin>            
+            </plugin>
 
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
@@ -314,8 +312,8 @@
                     <showDeprecation>true</showDeprecation>
                 </configuration>
             </plugin>
-            
-            
+
+
             <plugin>
                 <groupId>org.codehaus.mojo</groupId>
                 <artifactId>nbm-maven-plugin</artifactId>
@@ -323,10 +321,10 @@
                 <extensions>true</extensions>
 
                 <configuration>
-                    <author>Gianluca Costa</author>                                        
+                    <author>Gianluca Costa</author>
                     <keystore>${jar.signing.keystore.path}</keystore>
-                    <keystorepassword>${jar.signing.keystore.password}</keystorepassword>                    
-                    <keystorealias>${jar.signing.key.alias}</keystorealias>                    
+                    <keystorepassword>${jar.signing.keystore.password}</keystorepassword>
+                    <keystorealias>${jar.signing.key.alias}</keystorealias>
                     <requiresRestart>true</requiresRestart>
                     <licenseName>GPLv3</licenseName>
                     <licenseFile>LICENSE</licenseFile>
